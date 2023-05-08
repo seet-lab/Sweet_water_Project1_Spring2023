@@ -1,7 +1,7 @@
-Introduction
+## Introduction
 This is a web application hosted on Carrd, designed as a front-end portal for Sweetwater's available opportunities, specifically for students enrolled in PFW's Music Industry and Popular Music degree programs. The web application provides information on the partnership and the benefits it offers to School of Music students before logging in.
 
-Description
+## Description
 Once registered, students can set their password using forgot password functionality. After that users can login to the application using their credentials and access the available sweetwater opportunities, configure their badge photo and see their account information.
 
 For more information, please refer to the project glossary in the documentation.
