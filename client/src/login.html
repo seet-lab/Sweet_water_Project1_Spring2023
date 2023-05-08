@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign In</title>
+        <!-- Importing Axios library -->
+        <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js">
+        </script>
+        <!-- Importing Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+         <!-- Importing jQuery, Popper.js, and Bootstrap JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <!-- Inline Css styling -->
+        <style>
+            body {
+                background-color: #272936;
+            }
+            .logo-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 2rem;
+            }
+            .form-group.required .control-label:after {
+                content:"*";
+                color:red;
+            }
+            .invalid-user {
+                background-color: #FFCDD2;
+                border: 1px solid #EF9A9A;
+                color: #B71C1C;
+                padding: 6px;
+                margin-bottom: 10px;
+                border-radius: 4px;
+                text-align: left;
+            }
+        </style>
+    </head>
+<body>
+    <div class="container rounded mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="logo-container">
+                            <img
+                                src="https://so-sandbox.carrd.co/assets/images/image01.jpg?v=e8949a94"
+                                alt="Logo"
+                                class="img-fluid"
+                                style="max-width: 100px;"
+                            >
+                        </div>
+                         <!-- Sign in form -->
+                        <form id="signInForm" class="needs-validation" novalidate>
+                            <div class="form-group required">
+                                 <!-- Success message -->
+                                <div id="success-message" class="alert alert-success d-none" role="alert">
+                                    Successfully logged in!
+                                </div>    
+                                <!-- Error message -->  
+                                <div id="invalid-user"></div>
+                                <!-- Email input field -->
+                                <label for="email" class="control-label">Email:</label>
+                                <input type="email" id="email" name="email" class="form-control" placeholder="Enter email" required>
+                                 <!-- Invalid email error message -->
+                                <div class="invalid-feedback">Please provide a valid email address.</div>
+                            </div>
+                            <div class="form-group required">
+                                <label for="password" class="control-label">Password:</label>
+                                <!-- Password input field -->
+                                <input type="password" id="password" placeholder="Password" name="password" class="form-control" required>
+                                <!-- Invalid password error message -->
+                                <div class="invalid-feedback">Please provide a password.</div>
+                                <!-- Forgot password link -->
+                                <small><a href="/#forgotPassword">Forgot password?</a></small>
+                            </div>
+                            <!-- Sign in and cancel buttons -->
+                            <div class="row">
+                                <div class="col">
+                                  <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                                </div>
+                                <div class="col">
+                                  <button type="button" class="btn btn-outline-secondary btn-block" onclick="window.location.href='/#homesection'">Cancel</button>
+                                </div>
+                            </div>                        
+                        </form>
+                        <!-- Sign up button -->
+                        <div class="text-center mt-4">
+                            <p>Don't have an account?</p>
+                            <a href="/#fillout" class="btn btn-outline-primary">Sign up</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/login.js"></script>
+    </body>
+</html>

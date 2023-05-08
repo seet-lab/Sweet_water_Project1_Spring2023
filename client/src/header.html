@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title></title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <!-- Font Awesome Icon library  -->
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    </head>      
+    <!-- Inline css styling -->
+    <style>
+      body {
+        background-image: url(data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20512%20512%22%20width%3D%22512%22%20height%3D%22512%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%20%3Cfilter%20id%3D%22noise%22%3E%20%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.875%22%20result%3D%22noise%22%20%2F%3E%20%3CfeColorMatrix%20type%3D%22matrix%22%20values%3D%220%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200.88671875%200%22%20%2F%3E%20%3C%2Ffilter%3E%20%3Crect%20filter%3D%22url%28%23noise%29%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22512%22%20height%3D%22512%22%20fill%3D%22transparent%22%20opacity%3D%221%22%20%2F%3E%3C%2Fsvg%3E), linear-gradient(52deg, #42475C 0%, #20222E 71%)!important;
+      }    
+    
+      /* Change the background color of the navbar */
+      .navbar {
+        background-color: #363636;
+      }
+
+      /* Change the text color of the navbar links */
+      .navbar-nav .nav-link, #loggedInView .dropdown-item {
+        color: #ffffff;
+      }
+
+      /* Add hover effect to the navbar links */
+      .navbar-nav .nav-link:hover, #loggedInView .dropdown-item:hover {
+        color: #16181b;
+      }
+
+      /* Center the "Sign In" and "Sign Up" links */
+      .navbar-nav.ml-auto > .nav-item > .nav-link {
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
+      }
+      #loggedInView .dropdown-menu {
+        background-color: #363636;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- This creates a sticky top for the navbar -->
+    <div class="sticky-top">
+        <!-- The navbar is a responsive, expandable navbar with dark color scheme and fixed at the top of the page -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+             <!-- The navbar brand is a link, but here it is empty. It can be used to display a logo or any text that should appear at the beginning of the navbar -->
+            <a class="navbar-brand" href="#"></a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- The navbar links are contained in a collapsible div that is hidden on small screens -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- The navbar links are a list of links that are horizontally centered using Bootstrap's mx-auto and justify-content-center classes -->
+                <ul class="navbar-nav mx-auto justify-content-center">
+                    <li class="nav-item active">
+                    <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="/#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="/#contact">Contact</a>
+                    </li>
+                    <li class="nav-item" id="nav-opportunities">
+                    <a class="nav-link" href="/#opportunities">Opportunities</a>
+                    </li>
+                    <li class="nav-item" id="nav-access">
+                    <a class="nav-link" href="/#badge">Access</a>
+                    </li>
+                </ul>
+                <!-- The navbar links for users who are not logged in are contained in a list
+                    that is aligned to the right side of the navbar using Bootstrap's ml-auto class.
+                    These links appear when a user is not logged in -->
+                <ul class="navbar-nav ml-auto" id="navViewLoggedOut">
+                    <li class="nav-item">
+                    <a class="nav-link" href="/#usersignin">Sign In</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="/#fillout">Sign Up</a>
+                    </li>
+                </ul>
+                <!-- The navbar links for users who are logged in are contained in a list
+                    that is aligned to the right side of the navbar using
+                    Bootstrap's ml-auto class. These links appear when a user is logged in -->
+                <ul class="navbar-nav ml-auto" id="loggedInView">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="userNameMsg" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="/#aboutme"><i class="fas fa-user-circle"></i> Account</a>
+                            <a class="dropdown-item" onclick="signOut()" href="#" id="userLogout">
+                                <i class="fas fa-sign-out-alt"></i> Sign Out
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/esm/popper"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    ></script>
+    <script src="../js/header.js"></script>
+  </body>
+</html

@@ -1,0 +1,25 @@
+{
+  "name": "sweetwaterapplication",
+  "version": "1.0.0",
+  "description": "RESTful apis for sweetwater application",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build:serverless",
+    "build:serverless": "netlify-lambda build functions",
+    "start": "netlify-lambda serve functions"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "airtable": "^0.11.6",
+    "axios": "^1.3.4",
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "middy": "^0.36.0",
+    "netlify-lambda": "^2.0.16",
+    "serverless-http": "^3.2.0"
+  }
+}
