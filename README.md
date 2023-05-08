@@ -15,6 +15,24 @@ npm install netlify-cli -g
 Build your Node.js API by running the following command:
 npm run build
 
+## Back End Documentation: Node JS, Axios
+
+NOTE: All the backend code is within the server folder of the GitHub Repo. RESTful APIs were configured to perform the sign-in, forgot password, and user account information functionality and then hosted as Netlify functions on the Netlify server. 
+
+To create RESTful APIs, configure them and deploy the RESTful APIs on the Netlify server, we referred to the below article
+https://awstip.com/express-server-on-netlify-for-free-step-by-step-guide-e5fbdb47d891 
+
+We configured and deployed the following RESTful APIs:
+Login: 
+https://dapper-pika-dbaf53.netlify.app/.netlify/functions/login
+
+Forgot Password:
+https://dapper-pika-dbaf53.netlify.app/.netlify/functions/forgotPassword 
+
+User information: 
+https://dapper-pika-dbaf53.netlify.app/.netlify/functions/userAccountDetails
+
+
 ## RESTful APIs deployment using Netlify reference
 To deploy RESTful APIs we referred the following article:
 https://awstip.com/express-server-on-netlify-for-free-step-by-step-guide-e5fbdb47d891 
